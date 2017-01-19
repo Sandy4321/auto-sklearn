@@ -57,7 +57,8 @@ before_install:
   - conda install --yes libgcc
 
 install:
-  - pip install coverage pep8 python-coveralls
+  - pip install coverage pep8 python-coveralls Cython
+  - pip install git+https://github.com/automl/ConfigSpace@cythonize_everything
   - cat requirements.txt | xargs -n 1 -L 1 pip install
   # Debug output to know all exact package versions!
   - pip freeze
